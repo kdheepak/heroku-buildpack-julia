@@ -76,7 +76,7 @@ Pkg.instantiate()
 proj = Pkg.API.project()
 pkgs = Symbol.(keys(proj.dependencies))
 proj.ispackage && push!(pkgs, Symbol(proj.name))
-create_sysimage(pkgs, precompile_statements_file=isfile("precompile.jl") ? "precompile.jl" : nothing, replace_default=true)
+create_sysimage(pkgs, precompile_statements_file="precompile.jl", replace_default=true)
 __EOF__
 
 cp -r ~/.julia ${BUILD_DIR}/.julia
